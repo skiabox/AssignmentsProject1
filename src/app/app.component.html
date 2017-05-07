@@ -1,3 +1,33 @@
-<h1>
-  {{title}}
-</h1>
+<div class="container">
+
+  <app-game-control (gameStarted)="onGameStarted($event)">
+
+  </app-game-control>
+
+  <div class="row">
+
+    <div class="col-xs-12">
+
+      <app-even *ngFor="let evenElement of evenElements"
+      [evenComponentNumber]="evenElement">
+
+        <p style="color: red">
+          {{evenElement}}
+        </p>
+
+      </app-even>
+
+      <app-odd *ngFor="let oddElement of oddElements"
+      [oddComponentNumber]="oddElement">
+
+        <p style="color:blue">
+          {{oddElement}}
+        </p>
+
+      </app-odd>
+
+    </div>
+
+  </div>
+
+</div>

@@ -5,11 +5,8 @@
   "rules": {
     "callable-types": true,
     "class-name": true,
-    "comment-format": [
-      true,
-      "check-space"
-    ],
-    "curly": true,
+    "comment-format": false,
+    "curly": false,
     "eofline": true,
     "forin": true,
     "import-blacklist": [true, "rxjs"],
@@ -20,16 +17,19 @@
     ],
     "interface-over-type-literal": true,
     "label-position": true,
-    "max-line-length": [
-      true,
-      140
-    ],
-    "member-access": false,
-    "member-ordering": [
-      true,
-      "static-before-instance",
-      "variables-before-functions"
-    ],
+    "max-line-length": [true, 140],
+    "member-access": true,
+    "member-ordering":
+    [true, {
+      "order": [
+        "public-static-field",
+        "public-instance-field",
+        "public-constructor",
+        "public-instance-method",
+        "protected-instance-method",
+        "private-instance-method"
+      ]
+    }],
     "no-arg": true,
     "no-bitwise": true,
     "no-console": [
@@ -46,36 +46,29 @@
     "no-empty": false,
     "no-empty-interface": true,
     "no-eval": true,
-    "no-inferrable-types": [true, "ignore-params"],
+    "no-inferrable-types": false,
     "no-shadowed-variable": true,
     "no-string-literal": false,
     "no-string-throw": true,
     "no-switch-case-fall-through": true,
-    "no-trailing-whitespace": true,
+    "no-trailing-whitespace": false,
     "no-unused-expression": true,
     "no-use-before-declare": true,
     "no-var-keyword": true,
     "object-literal-sort-keys": false,
-    "one-line": [
-      true,
-      "check-open-brace",
-      "check-catch",
-      "check-else",
-      "check-whitespace"
-    ],
+    "one-line": false,
     "prefer-const": true,
-    "quotemark": [
-      true,
-      "single"
-    ],
+    "quotemark": false,
     "radix": true,
     "semicolon": [
+      true,
       "always"
     ],
     "triple-equals": [
       true,
       "allow-null-check"
     ],
+    "typedef": [true, "call-signature", "arrow-call-signature", "parameter", "arrow-parameter", "property-declaration", "variable-declaration", "member-variable-declaration"],
     "typedef-whitespace": [
       true,
       {
@@ -103,7 +96,7 @@
     "use-input-property-decorator": true,
     "use-output-property-decorator": true,
     "use-host-property-decorator": true,
-    "no-input-rename": true,
+    "no-input-rename": false,
     "no-output-rename": true,
     "use-life-cycle-interface": true,
     "use-pipe-transform-interface": true,
