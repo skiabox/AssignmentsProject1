@@ -28,7 +28,11 @@ export class GameControlComponent implements OnInit {
   //methods
   public onClickStart(): void
   {
-      this.intervalID = setInterval(this.timerFunction, 1000);
+      console.log(GameControlComponent.incrementingValue);
+      this.intervalID = setInterval(() => {
+        this.gameStarted.emit(GameControlComponent.incrementingValue);
+        GameControlComponent.incrementingValue++;
+      }, 1000);
   }
 
   public onClickStop(): void
@@ -37,13 +41,14 @@ export class GameControlComponent implements OnInit {
   }
 
   //helper function
-  public timerFunction(): void
-  {
-      this.gameStarted.emit(
-        GameControlComponent.incrementingValue
-      );
-
-      GameControlComponent.incrementingValue++;
-  }
+  // public timerFunction(): void
+  // {
+  //     debugger;
+  //     this.gameStarted.emit(
+  //       GameControlComponent.incrementingValue
+  //     );
+  //
+  //     GameControlComponent.incrementingValue++;
+  // }
 
 }
